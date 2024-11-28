@@ -20,11 +20,11 @@ public class Controller {
     }
 
     private void cargarCochesIniciales() {
-        coches.add(new Coche(1, "ABC123", "Toyota", "Corolla", "Rojo"));
-        coches.add(new Coche(2, "DEF456", "Honda", "Civic", "Azul"));
-        coches.add(new Coche(3, "GHI789", "Ford", "Focus", "Negro"));
-        coches.add(new Coche(4, "JKL012", "Chevrolet", "Spark", "Blanco"));
-        coches.add(new Coche(5, "MNO345", "BMW", "Serie 3", "Gris"));
+        coches.add(new Coche(1, "7473DAS", "Toyota", "Corolla", "Rojo"));
+        coches.add(new Coche(2, "1235FDO", "Honda", "Civic", "Azul"));
+        coches.add(new Coche(3, "5635DSF", "Ford", "Focus", "Negro"));
+        coches.add(new Coche(4, "3435BFS", "Chevrolet", "Spark", "Blanco"));
+        coches.add(new Coche(5, "9484FMN", "BMW", "Serie 3", "Gris"));
         System.out.println("Coches iniciales cargados en la memoria.");
     }
 
@@ -41,10 +41,10 @@ public class Controller {
             System.out.println("6. Exportar coches a archivo CSV");
             System.out.print("Elige una opción: ");
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
             switch (opcion) {
-                case 1 -> anadirCoche();
+                case 1 -> añadirCoche();
                 case 2 -> borrarCoche();
                 case 3 -> consultarCoche();
                 case 4 -> listarCoches();
@@ -54,7 +54,7 @@ public class Controller {
             }
         } while (opcion != 5);
     }
-
+//Crear el fichero.data o verificar si existe y sobreescribir
     private ArrayList<Coche> cargarCochesDeFichero() {
         File file = new File("src/main/java/resources/" + path1);
         if (!file.exists()) {
@@ -70,7 +70,7 @@ public class Controller {
         }
     }
 
-    private void anadirCoche() {
+    private void añadirCoche() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce el ID: ");
         int id = scanner.nextInt();
