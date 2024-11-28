@@ -117,7 +117,7 @@ public class Controller {
 
         Coche coche = coches.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
         if (coche != null) {
-            System.out.println(coche);
+            coche.mostrarDatos();
         } else {
             System.out.println("No se encontró un coche con el ID: " + id);
         }
